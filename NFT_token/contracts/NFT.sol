@@ -20,6 +20,10 @@ contract MyNFT is ERC721, ERC721Enumerable, Ownable {
         _tokenIDCounter.increment();
     }
 
+    function getCurrentTokenID() public view returns(uint256){
+        return _tokenIDCounter.current();
+    }
+
     function _baseURI() internal pure override returns(string memory){
         return "https://thisIsMyToken/";
     }
